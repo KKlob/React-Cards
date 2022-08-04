@@ -14,13 +14,13 @@ function CardTable() {
   //   setCards(cards => [...cards, { ...response.data, id: uuid() }]);
   // };
 
-  const [cards, addCard] = useAxios("https://deckofcardsapi.com/api/deck/new/draw/");
+  const [cards, addCard] = useAxios("https://deckofcardsapi.com/api/deck/");
 
   return (
     <div className="PlayingCardList">
       <h3>Pick a card, any card!</h3>
       <div>
-        <button onClick={addCard}>Add a playing card!</button>
+        <button onClick={() => addCard("new/draw/")}>Add a playing card!</button>
       </div>
       <div className="PlayingCardList-card-area">
         {cards.map(cardData => (
